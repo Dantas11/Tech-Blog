@@ -4,12 +4,12 @@ const commentData = [
   {
     user_id: 2,
     post_id: 1,
-    comment_text: "Great this is awesome!",
+    comment_text: "Working with React is so fun!",
   },
   {
     user_id: 1,
     post_id: 2,
-    comment_text: "Wow fantastic!",
+    comment_text: "I loved learning about Sequelize!",
   },
 ];
 

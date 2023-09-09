@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { User, Post, Comment } = require('../models');
+const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-// Route to get all posts for the homepage
-router.get('/', async (req, res) => {
+// Route to get all posts for the logged-in user
+router.get('/', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
             attributes: ['id', 'title', 'content', 'created_at'],
             include: [
                 {
@@ -24,15 +27,15 @@ router.get('/', async (req, res) => {
         });
 
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+        res.render('dashboard', { posts, loggedIn: true });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-// Route to get a single post by ID
-router.get('/post/:id', async (req, res) => {
+// Route to get a single post for editing
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.findOne({
             where: {
@@ -61,36 +64,16 @@ router.get('/post/:id', async (req, res) => {
         }
 
         const post = dbPostData.get({ plain: true });
-        res.render('single-post', { post, loggedIn: req.session.loggedIn });
+        res.render('edit-post', { post, loggedIn: true });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-// Route to render the login page
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('login');
-});
-
-// Route to render the signup page
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('signup');
-});
-
-// Route to handle 404 errors
-router.get('*', (req, res) => {
-    res.status(404).send("Can't go there!");
+// Route to render the 'add-post' template for creating a new post
+router.get('/new', (req, res) => {
+    res.render('add-post', { loggedIn: true });
 });
 
 module.exports = router;

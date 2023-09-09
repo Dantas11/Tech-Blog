@@ -25,8 +25,9 @@ async function loginFormHandler(event) {
            
             document.location.replace('/dashboard');
         } else { 
-            
-            alert(response.statusText);
+            if (response.status === 400) {
+                alert('Invalid username/password. If not a member, please sign up!');
+            } 
         }
     }
 }

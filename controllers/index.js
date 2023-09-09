@@ -5,10 +5,10 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 
 // Import the routes for the home page.
-const homeRoutes = require('./homeRoutes');
+const homeRoutes = require('./home-routes');
 
 //IMport the routes for the dashboard page.
-const dashBoardRoutes = require('./dashBoardRoutes');
+const dashboardRoutes = require('./dashboard-routes');
 
 // Use the homeRoutes middleware for requests to the root URL ("/").
 router.use('/', homeRoutes);
@@ -17,7 +17,7 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
 //Routemiddleware for './dashBoard' routes
-router.use('/dashBoard', dashBoardRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 
 // Export the router object for use in other parts of the application.

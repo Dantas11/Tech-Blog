@@ -48,6 +48,8 @@ After installing the dependencies, open in a integrated terminal and run the app
 
 node server.js
 
+Link to the webpage: https://ancient-tundra-82976-8a090aab5c36.herokuapp.com/
+
 ## Licence
 
 n/a

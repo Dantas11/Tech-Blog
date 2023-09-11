@@ -4,6 +4,14 @@
 
 This project uses Model-View-Controller (MVC) paradigm to create a blog-style website where developers can create an account, create a new post, edit the post made or delete it, comment on other user's posts. All posts get displayed at main page so users can read them and interact.
 
+## Table of Contents
+
+- [User Story](#user-story)
+- [Screenshots](#screenshots)
+- [Installations](#installations)
+- [Usage](#usage)
+- [Questions](#questions)
+
 ## User Story
 
 AS A developer who writes about tech

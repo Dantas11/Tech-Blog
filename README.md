@@ -12,9 +12,9 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## SCREENSHOTS
 
-![Tech Blog]()
+![Tech Blog](https://github.com/Dantas11/Tech-Blog/blob/main/public/images/tech-blog-1.png)
 
-![Tech Blog]()
+![Tech Blog](https://github.com/Dantas11/Tech-Blog/blob/main/public/images/tech-blog-2.png)
 
 ## Installation
 

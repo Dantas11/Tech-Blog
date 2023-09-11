@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This project uses the Model-View-Controller (MVC) paradigm to create a blog-style website where developers can create an account, create a new post, edit the post made or delete it, comment on other user's posts. All posts get displayed at main page with date and username of the creator.  
+This project uses Model-View-Controller (MVC) paradigm to create a blog-style website where developers can create an account, create a new post, edit the post made or delete it, comment on other user's posts. All posts get displayed at main page so users can read them and interact.
 
 ## User Story
 
